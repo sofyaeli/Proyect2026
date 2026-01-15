@@ -1,15 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-        <link rel="icon" type="image/x-icon" href="helmet_2823525.png">
-    
+    <title>Diccionario de Etiquetas HTML</title>
+    <link rel="icon" type="image/x-icon" href="helmet_2823525.png">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 12px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+    </style>
 </head>
 <body>
-    <p>Etiqueta</p>
-    <p>Definicion</p>//hacer una table con su definicion
-<table></table>
+
+    <h1>Guía de Etiquetas HTML</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Etiqueta</th>
+                <th>Definición</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&lt;!DOCTYPE html&gt;</td>
+                <td>Define que el documento es HTML5.</td>
+            </tr>
+            <tr>
+                <td>&lt;html&gt;</td>
+                <td>El contenedor raíz de una página web.</td>
+            </tr>
+            <tr>
+                <td>&lt;head&gt;</td>
+                <td>Contiene metadatos e información que no se muestra directamente al usuario (título, scripts, estilos).</td>
+            </tr>
+            <tr>
+                <td>&lt;meta&gt;</td>
+                <td>Define metadatos como el juego de caracteres (charset) o la configuración de la vista (viewport).</td>
+            </tr>
+            <tr>
+                <td>&lt;title&gt;</td>
+                <td>Establece el título de la página que aparece en la pestaña del navegador.</td>
+            </tr>
+            <tr>
+                <td>&lt;link&gt;</td>
+                <td>Relaciona el documento con recursos externos (como el favicon o archivos CSS).</td>
+            </tr>
+            <tr>
+                <td>&lt;body&gt;</td>
+                <td>Contiene todo el contenido visible de la página (texto, imágenes, videos).</td>
+            </tr>
+            <tr>
+                <td>&lt;p&gt;</td>
+                <td>Define un párrafo de texto.</td>
+            </tr>
+            <tr>
+                <td>&lt;table&gt;</td>
+                <td>Se utiliza para crear una tabla de datos.</td>
+            </tr>
+            <tr>
+                <td>&lt;tr&gt;</td>
+                <td>(Table Row) Define una fila completa en la tabla.</td>
+            </tr>
+            <tr>
+                <td>&lt;th&gt;</td>
+                <td>(Table Header) Define una celda de encabezado. El texto suele aparecer en negrita y centrado por defecto.</td>
+            </tr>
+             <tr>
+                <td>&lt;td&gt;</td>
+                <td>(Table Data) Define una celda de datos estándar. Es el contenedor para el contenido normal de la tabla.</td>
+            </tr>
+        </tbody>
+    </table>
+
 </body>
 </html>
