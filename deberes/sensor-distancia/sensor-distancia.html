@@ -100,7 +100,20 @@
         }
 
         .highlight { color: #ff9f1c; font-weight: bold; }
-    </style>
+   
+                .img-container{
+            display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+   box-shadow: 0px 0px 15px rgba(0, 212, 255, 0.5);
+        }
+               .conclusiones-lista ul li {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 2px solid #ff9f1c; /* Una línea naranja a la izquierda para resaltar */
+}
+   </style>
 </head>
 <body>
 
@@ -110,28 +123,51 @@
             <a href="/deberes/deberes.html" class="btn-nav">📚 Mis Deberes</a>
         </nav>
 
-        <h1>Simulación de Puertas Lógicas</h1>
+        <h1>Sensor de Distancia</h1>
         
         <h2>Objetivos</h2>
-        <p>Comprender el funcionamiento físico y lógico de la compuerta <span class="highlight">OR (74HC04)</span> mediante una simulación controlada.</p>
+        <p>Comprender el funcionamiento de un Sensor de Distancia mediante una simulación controlada.</p>
 
         
 
-        <h2>Materiales Utilizados</h2>
+       <h2>Materiales Utilizados</h2>
         <ul>
-            <li><strong>Protoboard:</strong> Placa de pruebas técnica.</li>
-            <li><strong>Circuito Integrado 74HC04:</strong> Compuerta lógica OR.</li>
-            <li><strong>DIP Switch:</strong> Control de entradas digitales.</li>
-            <li><strong>LED Rojo:</strong> Indicador de salida.</li>
+            <li><strong>Protoboard:</strong> Placa de pruebas que permite interconectar componentes electrónicos sin necesidad de soldadura.</li>
+            <li><strong>Arduino Uno:</strong> Microcontrolador programable que actúa como el cerebro del sistema, procesando señales de entrada y salida.</li>
+            <li><strong>Sensor Ultrasónico (HC-SR04):</strong> Emite ondas sonoras de alta frecuencia para medir la distancia de objetos mediante el tiempo de eco.</li>
+            <li><strong>Piezo (Buzzer):</strong> Transductor piezoeléctrico que convierte señales eléctricas en tonos auditivos para alertas.</li>
+            <li><strong>LED:</strong> Componente optoelectrónico que sirve como indicador visual de estado.</li>
+            <li><strong>Resistencias:</strong> Elementos de protección (usualmente $220\Omega$) que limitan la corriente para evitar daños en los LEDs.</li>
         </ul>
 
         <h2>Implementación</h2>
-        <img src="/assets/sensor.png" alt="">
-
+        <div class="img-container">
+            <img src="/assets/sensor.png" alt="Diagrama del sensor ultrasónico" width="600" height="400">
+        </div>
+            <ul>
+            <li>Encender led a una distacia de menos 100m.</li>
+            <li>Encender alarma a una distancia mayor a 100 m.</li>
+             </ul>
 
         <h2>Conclusiones</h2>
-        <p>Se verificó que la compuerta OR cumple con la función booleana de suma, donde la salida es activa si existe presencia de voltaje en cualquiera de sus entradas.</p>
-
+        <div class="conclusiones-lista">
+            <ul>
+                <li>
+                    <strong>Precisión en la Medición:</strong> Se determinó que el sensor ultrasónico es altamente eficaz para detectar proximidad, basándose en la velocidad del sonido ($343 m/s$). La precisión depende directamente de la correcta programación de los tiempos de emisión (*Trigger*) y recepción (*Echo*).
+                </li>
+                <li>
+                    <strong>Interacción Sensorial:</strong> La integración del <i>Piezo</i> y el <i>LED</i> permitió crear una interfaz de alerta dual (auditiva y visual), lo cual es fundamental en sistemas de seguridad industrial y asistencia de estacionamiento.
+                </li>
+                
+                <li>
+                    <strong>Gestión de Rangos Críticos:</strong> Se verificó que mediante código es posible establecer "zonas de seguridad", donde la frecuencia de los pitidos del piezo aumenta a medida que la distancia disminuye, mejorando la respuesta del usuario ante una colisión inminente.
+                </li>
+                <li>
+                    <strong>Optimización del Hardware:</strong> El uso de Arduino facilitó la centralización de los componentes, permitiendo que un solo microcontrolador gestione tanto la lógica del sensor como los actuadores de salida de manera síncrona y eficiente.
+                </li>
+            </ul>
+        </div>
+       
         <h2>Ver Simulacion</h2>
         <a class="btn-link" href="https://www.tinkercad.com/things/59r9i3RvI0O-sizzling-trug/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard" target="_blank">
             🚀 Abrir Proyecto en Tinkercad

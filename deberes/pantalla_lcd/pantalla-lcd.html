@@ -100,7 +100,8 @@
         }
 
         .highlight { color: #ff9f1c; font-weight: bold; }
-        .img-container{
+   
+                .img-container{
             display: flex;
     justify-content: center;
     align-items: center;
@@ -110,58 +111,56 @@
                .conclusiones-lista ul li {
     margin-bottom: 15px;
     padding-left: 10px;
-    border-left: 2px solid #ff9f1c; /* Una línea naranja a la izquierda para resaltar */
+    border-left: 2px solid #ff9f1c; 
 }
-
-    </style>
+   </style>
 </head>
 <body>
 
     <div class="main-container">
         <nav class="nav-buttons">
             <a href="/index.html" class="btn-nav">🏠 Home</a>
-            <a href="puertas_logicas.html" class="btn-nav">📚 Puertas Lógicas</a>
+            <a href="/deberes/deberes.html" class="btn-nav">📚 Mis Deberes</a>
         </nav>
 
-        <h1>Simulación de Puertas Lógicas</h1>
+        <h1>Pantalla LCD</h1>
         
         <h2>Objetivos</h2>
-        <p>Comprender el funcionamiento físico y lógico de la compuerta <span class="highlight">OR (74HC04)</span> mediante una simulación controlada.</p>
+        <p>Comprender el funcionamiento de una Pantalla LCD mediante una simulación controlada.</p>
 
         
 
-        <h2>Materiales Utilizados</h2>
+       <h2>Materiales Utilizados</h2>
         <ul>
-            <li><strong>Protoboard:</strong> Placa de pruebas técnica.</li>
-            <li><strong>Circuito Integrado 74HC04:</strong>El 74HC04 es la compuerta lógica OR de dos entradas. Nota: El 74HC04 que mencionaste es un inversor (NOT).</li>
-            <li><strong>DIP Switch:</strong>Interruptor de múltiples posiciones que permite configurar los estados lógicos "alto" (1) o "bajo" (0) en las entradas.</li>
-            <li><strong>LED Rojo:</strong>Diodo emisor de luz que actúa como indicador visual; se ilumina cuando la salida del circuito es un "1" lógico.</li>
-            <li><strong>Resistencias:</strong>Componentes que limitan el flujo de corriente para proteger el LED (usualmente de $220\Omega$ o $330\Omega$) y actúan como pull-down en los interruptores.</li>
-            <li><strong>Fuente de Voltaje (5V): :</strong>Provee la energía necesaria para polarizar el circuito integrado y establecer los niveles de tensión.</li>
-       
+            <li><strong>Protoboard:</strong> Placa de pruebas que permite interconectar componentes electrónicos sin necesidad de soldadura.</li>
+            <li><strong>Arduino Uno:</strong> Microcontrolador programable que actúa como el cerebro del sistema, procesando señales de entrada y salida.</li>
+            <li><strong>LCD 16 x 2:</strong> Este dispositivo es una pantalla de cristal líquido capaz de mostrar dos líneas de texto, con 16 caracteres cada una.</li>
+            <li><strong>Resistencias:</strong> Elementos de protección (usualmente $220\Omega$) que limitan la corriente para evitar daños en los LEDs.</li>
         </ul>
 
         <h2>Implementación</h2>
-        <div class="img-container"><img src="/assets/puerta_or.png" alt="" width="600 px" height="400 px" 
-    ></div>
-        
+        <div class="img-container">
+            <img src="/assets/pantalla-lcd.png" alt="Pantalla lcd" width="600" height="400">
+        </div>
 
+       <h2>Conclusiones</h2>
+        <div class="conclusiones-lista">
+            <ul>
+                <li>
+                    <strong>Comunicación Paralela de Datos:</strong> Se comprendió cómo la pantalla LCD utiliza un bus de datos (pines D4-D7) para recibir información del Arduino. La configuración de 4 bits permitió optimizar el uso de pines del microcontrolador sin sacrificar la velocidad de actualización de los caracteres.
+                </li>
 
-        <h2>Conclusiones</h2>
-  
-        <p>Tras realizar las pruebas experimentales y la medición de estados lógicos, se han obtenido las siguientes conclusiones:</p>
-<div class="conclusiones-lista">
-        <ul>
-    <li><strong>Validación de la Tabla de Verdad: </strong>Se comprobó experimentalmente que la compuerta OR responde a la expresión booleana Y = A + B. Esto significa que la salida solo se mantiene en estado bajo (0V) cuando todas sus entradas están conectadas a tierra. Con que una sola entrada reciba un nivel alto (5V), la salida se activa inmediatamente.</li>
-    <li><strong>Comportamiento Eléctrico y Umbrales</strong>e observó que el circuito integrado interpreta voltajes cercanos a los 5V como un "1" lógico. La implementación de resistencias de pull-down fue crítica para evitar "estados flotantes", asegurando que cuando el switch esté abierto, la entrada sea un "0" estable y no capte ruido electromagnético.</li>
-    <li><strong>Eficiencia en el Diseño Lógico:</strong>Se comprobó experimentalmente que la compuerta OR responde a la expresión booleana Y = A + B. Esto significa que la salida solo se mantiene en estado bajo (0V) cuando todas sus entradas están conectadas a tierra. Con que una sola entrada reciba un nivel alto (5V), la salida se activa inmediatamente.</li>
-    <li><strong>Validación de la Tabla de Verdad: </strong>Se comprobó experimentalmente que la compuerta OR responde a la expresión booleana Y = A + B. Esto significa que la salida solo se mantiene en estado bajo (0V) cuando todas sus entradas están conectadas a tierra. Con que una sola entrada reciba un nivel alto (5V), la salida se activa inmediatamente.</li>
-</ul>
-</div>
-
-
+                <li>
+                    <strong>Uso de Librerías Especializadas:</strong> La implementación de la librería <code>LiquidCrystal.h</code> facilitó la abstracción del hardware, permitiendo que funciones complejas como el posicionamiento del cursor (<code>setCursor</code>) y la impresión de cadenas (<code>print</code>) se realicen de manera sencilla y eficiente.
+                </li>
+                <li>
+                    <strong>Interfaz de Usuario (HMI):</strong> Se concluye que la pantalla LCD es una herramienta esencial de interfaz hombre-máquina, ya que permite depurar el código en tiempo real mostrando valores de sensores o mensajes de estado que no podrían visualizarse de otra forma fuera de la computadora.
+                </li>
+            </ul>
+        </div>
+       
         <h2>Ver Simulacion</h2>
-        <a class="btn-link" href="https://www.tinkercad.com/things/59r9i3RvI0O-sizzling-trug" target="_blank">
+        <a class="btn-link" href="https://www.tinkercad.com/things/eoIvuMKnjsj-lcdsensor-de-distancia" target="_blank">
             🚀 Abrir Proyecto en Tinkercad
         </a>
 

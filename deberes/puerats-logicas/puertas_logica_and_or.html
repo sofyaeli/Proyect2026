@@ -100,6 +100,22 @@
         }
 
         .highlight { color: #ff9f1c; font-weight: bold; }
+               .img-container{
+            display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+   box-shadow: 0px 0px 15px rgba(0, 212, 255, 0.5);
+        }
+        .conclusiones-lista ul li {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 2px solid #ff9f1c; /* Una línea naranja a la izquierda para resaltar */
+}
+
+.conclusiones-lista strong {
+    color: #00d4ff; /* Títulos de conclusión en azul brillante */
+}
     </style>
 </head>
 <body>
@@ -122,19 +138,52 @@
             <li><strong>Protoboard:</strong> Placa de pruebas técnica.</li>
             <li><strong>Circuito Integrado 74HC08:</strong> Compuerta lógica AND.</li>
                  <li><strong>Circuito Integrado 74HC32:</strong> Compuerta lógica OR.</li>
-            <li><strong>DIP Switch:</strong> Control de entradas digitales.</li>
-            <li><strong>LED Rojo:</strong> Indicador de salida.</li>
-            <li><strong>Protoboard:</strong> Placa de pruebas técnica.</li>
+            <li><strong>DIP Switch:</strong>Interruptor de múltiples posiciones que permite configurar los estados lógicos "alto" (1) o "bajo" (0) en las entradas.</li>
+            <li><strong>LEDs:</strong>Diodo emisor de luz que actúa como indicador visual; se ilumina cuando la salida del circuito es un "1" lógico.</li>
+            <li><strong>Resistencias:</strong>Componentes que limitan el flujo de corriente para proteger el LED (usualmente de 220\Omega o 330\Omega) y actúan como pull-down en los interruptores.</li>
+           
 
         </ul>
 
         <h2>Implementación</h2>
-        <img src="/assets/puerta-and-or.png" alt="">
+         <div class="img-container">
+        <img src="/assets/puerta-and-or.png" alt="" width="600 px" height="400 px" >
+        </div>
 
 
         <h2>Conclusiones</h2>
-        <p>Se verificó que la compuerta OR cumple con la función booleana de suma, donde la salida es activa si existe presencia de voltaje en cualquiera de sus entradas.</p>
+<p>Tras la implementación física y el análisis de señales en el entorno de simulación, se establecen las siguientes conclusiones técnicas:</p>
 
+<div class="conclusiones-lista">
+    <ul>
+        <li>
+            <strong>Diferenciación Lógica Funcional:</strong> 
+            Se validó experimentalmente la diferencia entre ambos operadores: 
+            mientras la compuerta <span class="highlight">OR (74HC32)</span> actúa bajo una lógica inclusiva (suma), donde la salida se activa si <i>al menos</i> una entrada es 1; la compuerta <span class="highlight">AND (74HC08)</span> opera bajo una lógica restrictiva (producto), donde la salida es 1 <i>únicamente</i> si todas las entradas son simultáneas.
+        </li>
+
+        <li>
+            <strong>Estabilidad Eléctrica mediante Pull-Down:</strong> 
+            Se demostró que el uso de resistencias de $10k\Omega$ en configuración <i>pull-down</i> es indispensable. Estas aseguran que, en ausencia de señal (switch abierto), la entrada se mantenga drenada a tierra ($0V$), eliminando el "ruido flotante" que podría causar activaciones erráticas en circuitos integrados de alta velocidad como la serie 74HC.
+        </li>
+
+        
+
+        <li>
+            <strong>Validación de la Expresión Booleana:</strong> 
+            Los resultados obtenidos coinciden al 100% con los modelos matemáticos:
+            <ul>
+                <li><strong>AND:</strong> $Y = A \cdot B$ (Condición restrictiva).</li>
+                <li><strong>OR:</strong> $Y = A + B$ (Condición alternativa).</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Eficiencia de la Serie 74HC:</strong> 
+            Se observó que los componentes de la familia CMOS (High-speed CMOS) ofrecen una respuesta inmediata y niveles de voltaje de salida definidos, facilitando la conexión en cascada para formar funciones lógicas más complejas en futuros proyectos.
+        </li>
+    </ul>
+</div>
         <h2>Ver Simulacion</h2>
         <a class="btn-link" href="https://www.tinkercad.com/things/59r9i3RvI0O-sizzling-trug/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard" target="_blank">
             🚀 Abrir Proyecto en Tinkercad

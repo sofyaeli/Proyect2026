@@ -7,118 +7,196 @@
     <link rel="icon" type="image/x-icon" href="helmet_2823525.png">
     
     <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --secondary-blue: #00b4d8;
+            --accent-orange: #ff9f1c;
+            --bg-dark: #1e1e26;
+            --card-bg: #2a2a35;
+            --text-gray: #b0b0b0;
+        }
+
         body {
-            background-color: #1e1e26;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            margin: 40px 0;
+            margin: 0;
+            padding: 20px;
             color: #e0e0e0;
         }
 
         .main-container {
-            background-color: #2a2a35;
+            background-color: var(--card-bg);
             padding: 40px;
             border-radius: 20px;
-            width: 90%;
-            max-width: 700px;
-            box-shadow: 10px 10px 20px #15151a, -5px -5px 15px #3f3f4f;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
             border: 1px solid #333;
         }
 
-        /* Estilo para los botones de navegación superior */
+        /* Navegación */
         .nav-buttons {
             display: flex;
-            gap: 10px;
+            gap: 15px;
             margin-bottom: 30px;
         }
 
         .btn-nav {
             text-decoration: none;
             color: #a0a0a0;
-            background: #2a2a35;
-            padding: 8px 15px;
+            background: #23232e;
+            padding: 10px 20px;
             border-radius: 8px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             border: 1px solid #444;
-            transition: all 0.3s ease;
-            box-shadow: 3px 3px 6px #15151a, -2px -2px 5px #3f3f4f;
+            transition: 0.3s;
         }
 
         .btn-nav:hover {
-            color: #00d4ff;
-            border-color: #00d4ff;
-            transform: translateY(-2px);
+            color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            background: #2f2f3d;
         }
 
         h1 {
-            color: #00d4ff;
+            color: var(--primary-blue);
             text-transform: uppercase;
             text-align: center;
-            border-bottom: 2px solid #00d4ff;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--primary-blue);
+            display: inline-block;
+            width: 100%;
             padding-bottom: 10px;
-            margin-top: 0;
         }
 
         h2 {
-            color: #00b4d8;
-            font-size: 1.3rem;
-            margin-top: 25px;
+            color: var(--secondary-blue);
+            font-size: 1.4rem;
+            margin-top: 40px;
             display: flex;
             align-items: center;
         }
 
         h2::before {
-            content: "▹";
-            margin-right: 10px;
-            color: #ff9f1c;
+            content: "⚡";
+            margin-right: 12px;
+            font-size: 1.1rem;
         }
 
-        p, li { line-height: 1.6; color: #b0b0b0; }
-        ul { list-style-type: square; padding-left: 20px; }
-
-        .btn-link {
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            color: #ffffff;
-            background: linear-gradient(145deg, #00b4d8, #0077b6);
+        .theory-box {
+            background: rgba(0, 212, 255, 0.05);
+            border-left: 4px solid var(--accent-orange);
             padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        p, li { line-height: 1.7; color: var(--text-gray); }
+        .highlight { color: var(--accent-orange); font-weight: bold; }
+
+        /* Contenedor de imágenes optimizado */
+        .img-container {
+            background: #1a1a21;
+            padding: 20px;
             border-radius: 12px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #3d3d4d;
+            transition: transform 0.3s ease;
+        }
+
+        .img-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 20px rgba(0, 212, 255, 0.2);
+        }
+
+        .img-container img {
+            max-width: 100%;
+            height: auto; /* Mantiene la proporción original */
+            border-radius: 8px;
+            filter: brightness(0.9) contrast(1.1);
+        }
+
+        ul.objectives-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.objectives-list li::before {
+            content: "✓";
+            color: var(--accent-orange);
+            margin-right: 10px;
             font-weight: bold;
-            margin-top: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 4px 4px 8px #1a1a21;
         }
-
-        .btn-link:hover {
-            transform: scale(1.02);
-            background: linear-gradient(145deg, #00d4ff, #0096c7);
-            box-shadow: 0px 0px 15px rgba(0, 212, 255, 0.5);
-        }
-
-        .highlight { color: #ff9f1c; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <div class="main-container">
         <nav class="nav-buttons">
-            <a href="/index.html" class="btn-nav">🏠 Home</a>
+            <a href="/index.html" class="btn-nav">🏠 Inicio</a>
             <a href="/deberes/deberes.html" class="btn-nav">📚 Mis Deberes</a>
         </nav>
 
-        <h1>Conversiones</h1>
+        <h1>Sistemas de Numeración</h1>
         
-        <h2>Objetivos</h2>
-        <p>Comprender el funcionamiento físico y lógico de la compuerta <span class="highlight">OR (74HC04)</span> mediante una simulación controlada.</p>
+        <h2>Objetivos de Aprendizaje</h2>
+        <ul class="objectives-list">
+            <li>Dominar la conversión técnica entre los sistemas <span class="highlight">Decimal, Binario, Hexadecimal y Octal</span>.</li>
+            <li>Aplicar métodos de división sucesiva y suma de potencias para la resolución de ejercicios.</li>
+            <li>Comprender la importancia de la representación de datos en la electrónica digital.</li>
+        </ul>
 
+        <h2>1. Conversión de Binario a Decimal</h2>
+        <div class="theory-box">
+            Se utiliza el método de <strong>notación posicional</strong>. Cada bit se multiplica por 2 elevado a su posición (empezando desde 0 de derecha a izquierda) y se suman los resultados.
+        </div>
         
 
-        <h2>Materiales Utilizados</h2>
-        <
+[Image of binary to decimal conversion diagram]
+
+        <div class="img-container">
+            <img src="/assets/binario-decimal.png" alt="Ejemplo Binario a Decimal">
+        </div>
+
+        <h2>2. Conversión de Binario a Octal</h2>
+        <div class="theory-box">
+            Se agrupan los bits en <strong>tercetos</strong> (grupos de 3) de derecha a izquierda. Cada grupo se convierte directamente a su equivalente decimal (del 0 al 7).
+        </div>
+        
+        <div class="img-container">
+            <img src="/assets/binario-octal.png" alt="Ejemplo Binario a Octal">
+        </div>
+
+        <h2>3. Conversión de Hexadecimal a Binario</h2>
+        <div class="theory-box">
+            Cada dígito hexadecimal se expande en exactamente <strong>4 bits</strong> (cuarteto). Por ejemplo, 'A' se convierte en 1010.
+        </div>
+        
+        <div class="img-container">
+            <img src="/assets/hexadecimal-binario.png" alt="Ejemplo Hexadecimal a Binario">
+        </div>
+
+        <h2>4. Conversión de Decimal a Binario</h2>
+        <div class="theory-box">
+            Se utiliza el método de <strong>divisiones sucesivas por 2</strong>. El residuo de cada división (0 o 1) se anota de abajo hacia arriba para formar el número binario.
+        </div>
+        
+        <div class="img-container">
+            <img src="/assets/decinal-binario.png" alt="Ejemplo Decimal a Binario">
+        </div>
+
+        <h2>Ejercicios de Práctica</h2>
+        <div class="img-container">
+            <img src="/assets/conversiones.png" alt="Tabla de ejercicios propuestos">
+        </div>
     </div>
 
 </body>
