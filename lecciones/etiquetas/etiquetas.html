@@ -80,11 +80,7 @@
             border: 1px solid var(--border-color);
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #23232e;
-        }
+        
 
         th {
             background-color: #1a1a21;
@@ -136,60 +132,108 @@
             <a href="../mis-lecciones.html" class="btn-nav">📚 Mis Lecciones</a>
         </nav>
 
-        <h1>Guía de Etiquetas <span class="highlight">HTML5</span></h1>
-        
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Etiqueta</th>
-                        <th>Definición y Propósito</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><span class="tag-name">&lt;!DOCTYPE html&gt;</span></td>
-                        <td>Informa al navegador que el documento sigue el estándar <span class="highlight">HTML5</span>.</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag-name">&lt;html&gt;</span></td>
-                        <td>Contenedor principal que envuelve todo el código de la página.</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag-name">&lt;head&gt;</span></td>
-                        <td>Sección de configuración. Contiene el cerebro del sitio (metadatos, estilos, enlaces).</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag-name">&lt;meta&gt;</span></td>
-                        <td>Configura aspectos técnicos como la codificación de caracteres o el diseño móvil.</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag-name">&lt;title&gt;</span></td>
-                        <td>Define el nombre que aparece en la pestaña del navegador.</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag-name">&lt;body&gt;</span></td>
-                        <td>El cuerpo de la web. Aquí va todo lo que el usuario puede ver e interactuar.</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag-name">&lt;table&gt;</span></td>
-                        <td>Estructura principal para organizar datos en filas y columnas.</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag-name">&lt;tr&gt;</span></td>
-                        <td>Representa una <strong>fila</strong> (Table Row) dentro de una tabla.</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag-name">&lt;th&gt;</span></td>
-                        <td>Celda de <strong>encabezado</strong> (Table Header). Suele resaltar en negrita.</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag-name">&lt;td&gt;</span></td>
-                        <td>Celda de <strong>datos</strong> (Table Data). El contenido estándar de la tabla.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<body>
+
+    <h1>Guía de Etiquetas HTML</h1>
+
+    <h2>1. Contenido y Formato de Texto</h2>
+    <table class="table-container">
+        <thead>
+            <tr>
+                <th>Etiqueta</th>
+                <th>Definición y Propósito</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="tag-name">&lt;h1&gt; a &lt;h6&gt;</span></td>
+                <td><strong>Encabezados</strong>. Definen títulos por jerarquía, siendo h1 el principal.</td>
+            </tr>
+            <tr>
+                <td><span class="tag-name">&lt;p&gt;</span></td>
+                <td>Define un <strong>párrafo</strong>. Es la etiqueta base para el texto corrido.</td>
+            </tr>
+            <tr>
+                <td><span class="tag-name">&lt;a&gt;</span></td>
+                <td>Crea <strong>hipervínculos</strong> hacia otras páginas o archivos usando el atributo href.</td>
+            </tr>
+            <tr>
+                <td><span class="tag-name">&lt;ul&gt; / &lt;li&gt;</span></td>
+                <td>Crea <strong>listas desordenadas</strong> (con puntos o viñetas).</td>
+            </tr>
+            <tr>
+                <td><span class="tag-name">&lt;div&gt;</span></td>
+                <td>Contenedor de bloque usado para <strong>agrupar secciones</strong> y aplicar diseño.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>2. Multimedia y Estructura Semántica</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Etiqueta</th>
+                <th>Definición y Propósito</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="tag-name">&lt;img&gt;</span></td>
+                <td>Inserta <strong>imágenes</strong>. Es una etiqueta de cierre automático.</td>
+            </tr>
+            <tr>
+                <td><span class="tag-name">&lt;header&gt;</span></td>
+                <td>Define la parte superior de una página o sección (el "encabezado" visual).</td>
+            </tr>
+            <tr>
+                <td><span class="tag-name">&lt;nav&gt;</span></td>
+                <td>Contenedor para los <strong>enlaces de navegación</strong> del sitio.</td>
+            </tr>
+            <tr>
+                <td><span class="tag-name">&lt;footer&gt;</span></td>
+                <td>El <strong>pie de página</strong>. Contiene avisos legales, redes o contacto.</td>
+            </tr>
+            <tr>
+                <td><span class="tag-name">&lt;section&gt;</span></td>
+                <td>Define fragmentos de contenido con una temática común.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. Formularios e Interacción</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Etiqueta</th>
+                <th>Definición y Propósito</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="tag-name">&lt;form&gt;</span></td>
+                <td>Contenedor principal para recolectar datos del usuario.</td>
+            </tr>
+            <tr>
+                <td><span class="tag-name">&lt;input&gt;</span></td>
+                <td>Campo de entrada de datos (texto, contraseña, radio, etc.).</td>
+            </tr>
+            <tr>
+                <td><span class="tag-name">&lt;label&gt;</span></td>
+                <td>Proporciona un <strong>título o descripción</strong> a un campo de input.</td>
+            </tr>
+            <tr>
+                <td><span class="tag-name">&lt;button&gt;</span></td>
+                <td>Un <strong>botón</strong> interactivo para ejecutar acciones o enviar formularios.</td>
+            </tr>
+            <tr>
+                <td><span class="tag-name">&lt;textarea&gt;</span></td>
+                <td>Campo de texto de <strong>varias líneas</strong> (ideal para comentarios).</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
     </div>
 
 </body>
